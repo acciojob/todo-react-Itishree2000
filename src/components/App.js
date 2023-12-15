@@ -11,14 +11,14 @@ const App = () => {
     setInputValue(event.target.value);
   }
   
-  function handleText(){
+  function handelText(){
       if(inputValue.trim()!==('')){
         setText([...text,inputValue]);
         setInputValue('');
       }
   }
 
-  function handeleRemoveText(index){
+  function handelRemoveText(index){
     const updatedText = text.filter((_, i) => i !== index);
     setText(updatedText);
 
@@ -30,12 +30,12 @@ const App = () => {
         {/* Do not remove the main div */}
         <h3>To-Do-List</h3>
         <input type="text" placeholder="" value={inputValue} onChange={addInputValue}/>
-        <button onClick={handleText}>Add Todo</button>
+        <button onClick={handelText}>Add Todo</button>
           <ul>
           {text.map((todo,index)=>(
              <li key={index}>
             {todo}
-             <button onClick={()=>handeleRemoveText(index)}>Delete</button>
+             <button onClick={()=>handelRemoveText(index)}>Delete</button>
            </li>
           ))}
        </ul>
