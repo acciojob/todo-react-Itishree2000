@@ -27,6 +27,7 @@ const App = () => {
       <h3>To-Do-List</h3>
       <input type="text" placeholder="" value={inputValue} onChange={addInputValue}/>
       <button onClick={handleText}>Add Todo</button>
+      <div>
       <ul>
         {text.map((todo, index) => (
           <li key={index}>
@@ -35,6 +36,7 @@ const App = () => {
           </li>
         ))}
       </ul>
+      </div>
     </div>
   )
 }
