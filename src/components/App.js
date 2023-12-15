@@ -8,11 +8,11 @@ const App = () => {
   function addInputValue(event) {
     setInputValue(event.target.value);
   }
-  
+
   function handleText() {
     if (inputValue.trim() !== "") {
       setText([...text, inputValue]);
-      setInputValue('');
+      setInputValue("");
     }
   }
 
@@ -25,21 +25,24 @@ const App = () => {
     <div>
       {/* Do not remove the main div */}
       <h3>To-Do-List</h3>
-      <input type="text" placeholder="" value={inputValue} onChange={addInputValue}/>
+      <input
+        type="text"
+        placeholder=""
+        value={inputValue}
+        onChange={addInputValue}
+      />
       <button onClick={handleText}>Add Todo</button>
-      <div>
+
       <ul>
         {text.map((todo, index) => (
           <li key={index}>
-            {todo}
+           <span>{todo}</span> 
             <button onClick={() => handleRemoveText(index)}>Delete</button>
           </li>
         ))}
       </ul>
-      </div>
     </div>
-  )
-}
+  );
+};
 
 export default App;
-
