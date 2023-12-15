@@ -31,14 +31,14 @@ const App = () => {
         <h3>To-Do-List</h3>
         <input type="text" placeholder="" value={inputValue} onChange={addInputValue}/>
         <button onClick={handleText}>Add Todo</button>
-      
+          <ul>
           {text.map((todo,index)=>(
-             <div key={index}>
+             <li key={index}>
             {todo}
              <button onClick={()=>handeleRemoveText(index)}>Delete</button>
-           </div>
+           </li>
           ))}
-       
+       </ul>
     </div>
   )
 }
