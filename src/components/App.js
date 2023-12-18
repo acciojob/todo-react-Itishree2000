@@ -37,7 +37,7 @@ const App = () => {
         {text.map((todo, index) => (
           <li key={index}>
            <span>{todo}</span> 
-            <button onClick={() => handleRemoveText(index)}>Delete</button>
+            <button onClick={() => handleRemoveText(index)}></button>
           </li>
         ))}
       </ul>
